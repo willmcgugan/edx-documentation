@@ -88,48 +88,9 @@ To change access to the course team configuration options, follow these steps.
 **Default Team Size**
 
 This specifies the maximum number of learners that can join a team, a default value for all teams in your course.
-This default value can be overridden for a specific team group as well.
-
-   Course Max Team Size has a hard limit and cannot exceed 500.
-   That said, in practice, teams should rarely have many learners in them at all.
-   If you have a use case where a large number of users need to be in a team,
-   consider using discussions rather than teams. 
-
-#. To specify team-sets within which teams can be created, add entries under
-   ``"team_sets"``. 
-   
-    - For each team-set, provide a description, name, and ID as shown
-      in the example.
-    
-    - You may optionally provide a ``"type"`` for each team-set,
-      which sets the visibility and access for teams. Different ``"type"`` values are
-      explained in the next section, :ref:`Team-set Types`
-
-    - Team-sets may also specify an optional ``"max_team_size"`` setting.
-      This setting will override the ``max_team_size`` set on the course as a whole.
-
-        + Example: The course ``max_team_size`` is fairly high to allow for larger
-          teams. If for one assignment you would like to have students work in
-          smaller groups,  you can set the ``max_team_size`` on the team-set for
-          that assignment to a smaller value and override the course's setting for that
-          team-set
-
-        + The opposite of this example works as well, you can specify a value either
-          smaller or larger than the course's value
-
-   Make sure that you enclose all of the sets of team-set values within a set of
-   square brackets, with a comma after the closing square bracket.
-
-   .. note:: If you create more than one team-set, make sure that you add a comma
-      after the closing curly brace of each team-set that has another team-set
-      following it. The syntax that you use must match the example syntax
-      exactly, as missing or incorrect indentation, curly braces, brackets,
-      or punctuation marks will cause errors.
-
-
-   .. note:: For team-set IDs, you can use only alphanumeric characters and the
-      underscore, hyphen, and period characters.
->>>>>>> 8ab6cc8d (update teams documentation)
+This default value can be overridden for a specific team group as well. This value has a hard limit and cannot exceed 500,
+but in practice, this should be significantly lower. Teams should rarely have many learners in them at all.
+If you have a use case where a large number of users need to be in a team, consider using discussions rather than teams. 
 
 **Team Groups:**
 
@@ -148,6 +109,19 @@ These names and descriptions are visible to learners in the Teams application as
    is no longer visible in the LMS, and learners will not be able to leave
    teams associated with the deleted topic.
 
+**Types of Team Groups**
+
+There are several types of team group that can be created, each of which behaves
+differently for both instructors and learners.
+
+* **Open** sets up a team group where learners can freely create, join, and leave groups,
+  and can see all teams within the group.
+* **Public managed** allows only course staff to control team creation and membership.
+  Learners can see other teams but cannot join or leave their team.
+* **Private managed** allows only course staff to control team creation and membership.
+  Additionally, learners can only see the teams they are members of, unlike other options
+  that give them visibility into other teams. This type is helpful in particular if team
+  assignments are being used in a course.
 
 **Team Group Size Override**
 
